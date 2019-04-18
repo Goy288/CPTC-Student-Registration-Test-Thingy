@@ -1,0 +1,9 @@
+main > span[class=required]{
+    color: red;
+}
+main > input{
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid #a9a9a9;
+    display: inline-block;
+}
