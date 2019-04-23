@@ -8,7 +8,7 @@ class Student {
 let testStu:Student = new Student();
 testStu.firstName = "Cameron";
 testStu.lastName = "Sherwood";
-testStu.dateOfBirth = new Date(2000, 12, 14);
+testStu.dateOfBirth = new Date(2000, 12, 14); // December 14th 2000
 
 window.onload = function() {
     let regButton = <HTMLButtonElement>
