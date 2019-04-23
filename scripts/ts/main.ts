@@ -47,4 +47,9 @@ function displayStudent(stu:Student) {
     let list = <HTMLUListElement>
         document.querySelector("#roster > ul");
     list.appendChild(studentLI);
+    studentLI.onclick = function() {
+        if (confirm("Are you sure you want to delete?")){
+            (<HTMLLIElement>this).remove();
+        }
+    };
 }
