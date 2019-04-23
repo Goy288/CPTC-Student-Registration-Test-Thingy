@@ -17,10 +17,14 @@ function registerStudent() {
 }
 function getStudent() {
     var s = new Student();
-    s.firstName = document.getElementById("first").value;
-    s.lastName = document.getElementById("last").value;
+    s.firstName = document.getElementById("first-name").value;
+    s.lastName = document.getElementById("last-name").value;
     return s;
 }
 function displayStudent(stu) {
-    alert(stu.firstName + " " + stu.lastName);
+    var studentLI = document.createElement("li");
+    studentLI.innerText = stu.firstName
+        + " " + stu.lastName;
+    var list = document.querySelector("#roster > ul");
+    list.appendChild(studentLI);
 }

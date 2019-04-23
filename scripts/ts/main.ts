@@ -24,9 +24,9 @@ function registerStudent() {
 function getStudent():Student {
     let s = new Student();
     s.firstName = (<HTMLInputElement>
-        document.getElementById("first")).value;
+        document.getElementById("first-name")).value;
     s.lastName = (<HTMLInputElement>
-        document.getElementById("last")).value;
+        document.getElementById("last-name")).value;
     /*
     TODO: Get date of birth
     s.dateOfBirth = (<HTMLInputElement>
@@ -36,5 +36,15 @@ function getStudent():Student {
 }
 
 function displayStudent(stu:Student) {
-    alert(stu.firstName + " " + stu.lastName);
+    //alert(stu.firstName + " " + stu.lastName);
+
+    //<li></li>
+    let studentLI = <HTMLLIElement>
+        document.createElement("li");
+    studentLI.innerText = stu.firstName
+                  + " " + stu.lastName;
+    // Getting <ul> and appending the new <li>
+    let list = <HTMLUListElement>
+        document.querySelector("#roster > ul");
+    list.appendChild(studentLI);
 }
