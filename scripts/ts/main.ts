@@ -17,9 +17,31 @@ window.onload = function() {
 }
 
 function registerStudent() {
-    let nextStudent:Student = getStudent();
-    displayStudent(nextStudent);
+    if(isValid()){
+        let nextStudent:Student = getStudent();
+        displayStudent(nextStudent);
+    }
 }
+
+function isValid():boolean {
+    // Validate all required elements
+    let reqElems = document.querySelectorAll("main > input[data-required]");
+    // For each element, check if the input is empty
+    // If they're empty, display errors in the span tags and return false
+
+    let valid = true;
+
+    for (let i = 0, elem:HTMLInputElement; elem = <HTMLInputElement>reqElems[i]; i++) {
+        if (elem.value == ""){
+            let span = elem.nextElementSibling;
+            let msg:string = elem.getAttribute("data-msg");
+            span.innerHTML = msg;
+            valid = false;
+        }
+    }
+    return valid;
+}
+
 
 function getStudent():Student {
     let s = new Student();

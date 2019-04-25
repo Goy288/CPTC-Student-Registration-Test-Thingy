@@ -12,8 +12,23 @@ window.onload = function () {
     regButton.onclick = registerStudent;
 };
 function registerStudent() {
-    var nextStudent = getStudent();
-    displayStudent(nextStudent);
+    if (isValid()) {
+        var nextStudent = getStudent();
+        displayStudent(nextStudent);
+    }
+}
+function isValid() {
+    var reqElems = document.querySelectorAll("main > input[data-required]");
+    var valid = true;
+    for (var i = 0, elem = void 0; elem = reqElems[i]; i++) {
+        if (elem.value == "") {
+            var span = elem.nextElementSibling;
+            var msg = elem.getAttribute("data-msg");
+            span.innerHTML = msg;
+            valid = false;
+        }
+    }
+    return valid;
 }
 function getStudent() {
     var s = new Student();
