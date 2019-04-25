@@ -7,3 +7,31 @@ main > input{
     border: 1px solid #a9a9a9;
     display: inline-block;
 }
+input{
+    color: #25283D;
+}
+body{
+    background: #CEA2AC;
+    color: #EFD9CE;
+    border: .2em solid #A675A1;
+    border-radius: .5em;
+    padding: .5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+header{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: rgb(126, 13, 126);
+}
+label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: #25283D;
+    display: inline-block;
+    width: 6em;
+    text-align: right;
+}
+html{
+    background: #25283D;
+}
